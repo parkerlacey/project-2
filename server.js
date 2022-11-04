@@ -1,35 +1,18 @@
-// Import expression and sessions
 const express = require('express');
-const session = require('express-session');
-
-// Import routes from controllers folder
-const routes = require('./controllers/index');
-
-// Import connection to database
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = require('./controllers');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3306;
 
-// Create session data?
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
-
-app.use(session(sess));
-
+// Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(routes);
+// Turn on routes
+app.use(routes)
 
+// Turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
