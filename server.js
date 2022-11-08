@@ -4,11 +4,12 @@ const sequelize = require('./config/connection');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3001;
 
-//!Create Sequelize store for session
+// Create Sequelize store for session
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -24,12 +25,13 @@ const sess = {
   })
 };
 
-//! Use the session
+// Use the session
 app.use(session(sess));
 
 // Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({});
