@@ -14,7 +14,7 @@ router.get('/welcome', async (req, res) => {
   }
 });
 
-// Display the home page
+// Display the login page
 router.get('/login', async (req, res) => {
   try {
     res.render('login');
@@ -25,7 +25,7 @@ router.get('/login', async (req, res) => {
   }
 });
 
-// Display the dashboard page
+// Display the home page
 router.get('/home', async (req, res) => {
   try {
     res.render('home');
