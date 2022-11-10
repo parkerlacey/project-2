@@ -4,7 +4,82 @@ nav {
 #base {
     display: flex;
     justify-content: center;
-    font-size: 5rem;
+   
    
     padding: 20rem;
+}
+.navbar-brand {
+  font-weight: 900;
+  font-size: 35px;
+}
+.nav-link:hover {
+  text-shadow: -17px 15px 0 rgba(100,100,100,1), -26px 25px 3px rgba(0,0,0,0.7);
+  transition-timing-function: ease-in;
+
+  transition: 0.2s;
+
+}
+.welcome {
+  font-weight: 900;
+   font-size: 5rem;
+
+  --c: #000000; 
+  --h: 1.2em;   
+  
+  line-height: var(--h);  
+  color: #0000;
+  overflow: hidden;
+  text-shadow: 
+    0 calc(-1*var(--h)*var(--_i,0)) var(--c), 
+    0 calc(var(--h)*(1 - var(--_i,0))) #fff;
+  background: 
+    linear-gradient(var(--c) 0 0) no-repeat
+    calc(200% - var(--_i, 0) * 100%) 100% / 200% calc(100% * var(--_i, 0) + .08em);
+  transition: .3s calc(var(--_i, 0) * .3s), background-position .3s calc(.3s - calc(var(--_i, 0) * .3s));
+}
+.welcome:hover {
+  --_i: 1;
+  cursor: pointer;
+}
+
+body {
+ 
+  margin: 0;
+
+  place-content: center;
+}
+h3 {
+  font-family: system-ui, sans-serif;
+  font-size: 3rem;
+  margin:0;
+  cursor: pointer;
+  padding: 0 .1em;
+}
+@media(max-width:767px) {
+  .welcome {
+    
+    font-size: 3rem;
+  }
+  #base {
+    padding: 3rem;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+  .hrHide {
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .welcome {
+    
+    font-size: 5rem;
+  }
+  #base {
+    padding: 3rem;
+    padding-top: 25rem;
+    padding-bottom: 15rem;
+  }
+  .hrHide {
+    display: none;
+  }
 }
