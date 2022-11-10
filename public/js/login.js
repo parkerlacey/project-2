@@ -1,3 +1,5 @@
+//! needs css elements to all be updated in order to target the correct buttons
+
 // Login 
 const loginFormHandler = async (event) => {
   event.preventDefault();
@@ -8,7 +10,7 @@ const loginFormHandler = async (event) => {
 
   if (email && password) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('/api/user/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -34,7 +36,7 @@ const signupFormHandler = async (event) => {
 
   // If theres a name, email and password value then send values to POST signup route
   if (name && email && password) {
-    const response = await fetch('/api/users/signup', {
+    const response = await fetch('/api/user/signup', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
