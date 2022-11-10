@@ -1,0 +1,104 @@
+
+.returnPrev{
+    color: rgba(0, 0, 0, 0.435);
+    text-decoration: none;
+    
+}
+.returnPrev:hover{
+    color: rgb(164, 20, 20);
+    margin-top: 5px;
+    
+}
+h2, h4 {
+    text-align: center;
+}
+section {
+	display: grid;
+	place-items: center;
+	height: 80vh;
+    width: 100vw;
+    
+}
+.section-header{
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 900;
+    padding-bottom: 25px;
+    color: rgb(0, 0, 0);
+}
+.section-header:after{
+    content: '';
+    height: 3px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 100px);
+    background: rgb(255, 255, 255);
+}
+.section-header span {
+	display: block;
+	font-size: 15px;
+	font-weight: 300;
+}
+.testimonials{
+    max-width: 160rem;
+    max-height: 80vh;
+    padding: 0 15px 50px;
+    margin: 0 auto 80px auto;
+}
+.single-item{
+    background: rgb(48,48,45);
+    background: linear-gradient(90deg, rgba(48,48,45,1) 1%, rgba(77,76,65,1) 14%, rgba(157,152,145,1) 74%);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    margin: 50px 15px;
+    border: 3px solid rgb(0, 0, 0);
+}
+.profile{
+    margin-bottom: 30px;
+    text-align: center;    
+}
+.img-area {
+	margin: 0 15px 15px 15px;
+}
+.img-area img {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	border: 3px solid rgb(0, 0, 0);
+}
+.content{
+    font-size: 18px;
+}
+.content p {
+	text-align: justify;
+}
+.content p span {
+	font-size: 48px;
+	margin-right: 20px;
+    color: rgb(226, 43, 43);
+}
+.userContact i {
+	margin-right: 25px;
+}
+.userPersonal h4 {
+	font-family: 'Berkshire Swash', cursive;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+	background-color: rgb(0, 0, 0);
+}
+.radar-area {
+	margin: 0 15px 15px 15px;
+}
+.radar-area img {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	border: 3px solid rgb(0, 0, 0);
+}
+@media(max-width:767px) {
+    #hrT {
+      display:none;
+    }
+  }
