@@ -24,14 +24,13 @@ Review.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    //!
     rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
-      foreignkey: true,
+      foreignKey: true,
       references: {
         model: 'user',
         key: 'id',
