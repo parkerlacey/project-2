@@ -13,9 +13,9 @@ Review.init(
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
-    reviewcontent: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -24,13 +24,13 @@ Review.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    ratings_for_different_things: {
+    rating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
-      foreignkey: true,
+      foreignKey: true,
       references: {
         model: 'user',
         key: 'id',
