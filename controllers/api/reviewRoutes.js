@@ -37,7 +37,7 @@ router.post('/', withAuth, async (req, res)  => {
   }
 });
 
-// TODO: Get all reviews from specific user 
+// Get all reviews from specific user 
 router.get('/:id', async (req, res)=> {
   try {
     // Find review by the id
@@ -109,8 +109,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-//! 500 internal server error
-// TODO: Get all reviews from specific user 
+// Get all reviews from specific user 
 router.get('/:id', async (req, res)=> {
   try {
     // Find review by the id
