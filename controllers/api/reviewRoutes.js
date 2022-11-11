@@ -33,18 +33,16 @@ router.post('/', withAuth, async (req, res)  => {
   }
 });
 
+
 // TODO: Get all reviews from specific user 
-router.get('/:id', withAuth, async (req, res)=> {
+router.get('/:id', async (req, res)=> {
   try {
     // Find review by the id
-    const reviewData = await Review.findByPk(req.params.id, {
+    const reviewData = await Review.findAll({
       // Include the user model's name data
-      include: [
-        {
-          model: User,
-          attribute: ['name'],
-        },
-      ],
+      where: {
+        id: req.params.id
+      }
     });
 
     // If there are no reviews from the user
@@ -53,7 +51,7 @@ router.get('/:id', withAuth, async (req, res)=> {
       return;
     }
     // Serialize the data so the template can render it
-    const review = reviewData.get({ plain: true });
+    const review = reviewData.map((review) => review.get({ plain: true}));
 
     // Render the data in the review handlebar
     res.render('review', {
