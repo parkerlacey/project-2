@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
 // Display the welcome page
 router.get('/welcome', async (req, res) => {
@@ -24,7 +25,7 @@ router.get('/login', async (req, res) => {
 });
 
 // Display the home page
-router.get('/home', async (req, res) => {
+router.get('/home', withAuth, async (req, res) => {
   try {
     res.render('home');
 

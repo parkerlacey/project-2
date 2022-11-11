@@ -10,4 +10,6 @@ Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
+//! Restaurant relationship
+
 module.exports = { User, Review };

@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const User = require('../../models/User')
 const Review = require('../../models/Review');
+const withAuth = require('../../utils/auth');
 
 // Get all reviews
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const review = await Review.findAll();
 
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a review
-router.post('/', async (req, res)  => {
+router.post('/', withAuth, async (req, res)  => {
   try {
     const review = await Review.create({
       title: req.body.title,
@@ -32,9 +33,8 @@ router.post('/', async (req, res)  => {
   }
 });
 
-//! 500 internal server error
 // TODO: Get all reviews from specific user 
-router.get('/:id', async (req, res)=> {
+router.get('/:id', withAuth, async (req, res)=> {
   try {
     // Find review by the id
     const reviewData = await Review.findByPk(req.params.id, {
@@ -69,7 +69,7 @@ router.get('/:id', async (req, res)=> {
 });
 
 // Update a review
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.update( req.body, {
       where: {
@@ -89,7 +89,7 @@ router.put('/:id', async (req, res) => {
 })
 
 // Delete a review
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.destroy({
       where: {
