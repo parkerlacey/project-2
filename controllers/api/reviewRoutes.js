@@ -103,7 +103,11 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'There is no review with this id!'});
       return;
     }
-
+  } catch (err){
+    console.error(err);
+    res.status(400).json(err);
+  }
+});
 
 //! 500 internal server error
 // TODO: Get all reviews from specific user 
