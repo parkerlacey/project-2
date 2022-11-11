@@ -12,4 +12,5 @@ Review.belongsTo(User, {
 
 //! Restaurant relationship
 
+
 module.exports = { User, Review };
