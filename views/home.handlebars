@@ -5,24 +5,9 @@
 <!--- old -->
 <h2> Recent Quacks </h2>
 
-
 <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
 
-        <div class="carousel-item active">
-                <div class="card">
-                    <div class="img-wrapper"><img src="https://picsum.photos/200" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 1</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        <a href="#" class="btn btn-dark">View</a>
-                    </div>
-                </div>
-            </div>
-            
         {{#each reviews as |review|}}
         <div class="carousel-item active">
             <div class="card">
@@ -30,7 +15,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{content}}</p>
-                    <a href="#" class="btn btn-dark">View</a>
+                    <a href="/api/review/{{id}}" class="view-btn btn btn-dark">View</a>
                 </div>
             </div>
         </div>
