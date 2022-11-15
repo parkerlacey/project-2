@@ -20,7 +20,54 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(94,105,181,1) 0%,
     top: 50%;
     transform: translateY(-50%);
   }
-  @media (min-width: 768px) {
+  
+
+.py-5 {
+  background-image: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );}
+  .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:rgb(255, 255, 255);
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #000000;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+    @media (min-width: 768px) {
     .carousel-item {
       margin-right: 0;
       flex: 0 0 33.333333%;
@@ -29,6 +76,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(94,105,181,1) 0%,
     .carousel-inner {
       display: flex;
     }
+ 
   }
   .card .img-wrapper {
       max-width: 100%;
@@ -44,9 +92,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(94,105,181,1) 0%,
     .card .img-wrapper {
       height: 17em;
     }
+    .searchbar:hover > .search_input{
+     
+      width: 250px;
+     
+      }
   }
-#search {
-    width: 450px;
-}
-.py-5 {
-  background-image: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );}
