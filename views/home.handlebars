@@ -8,7 +8,7 @@
 
 <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
-        {{#each reviews as |review|}}
+        {{!-- {{#each reviews as |review|}}
         <div class="carousel-item">
             <div class="card">
                 <div class="img-wrapper"><img src="https://picsum.photos/200" class="d-block w-100" alt="..."> </div>
@@ -19,6 +19,14 @@
                 </div>
             </div>
         </div>
-        {{/each}}
+        {{/each}} --}}
+        {{#each restaurantarray as |restaurant|}}
+        <div>
+            {{restaurant.name}}
+            {{restaurant.location_string}}
+        </div>
 
-<script src="./../public/js/homeScript.js"> </script>
+        {{/each}}
+    </div>
+</div>
+<script src="/js/homeScript.js"> </script>
