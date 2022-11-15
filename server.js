@@ -31,7 +31,7 @@ app.use(session(sess));
 // Middleware 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + '/public')));
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({});

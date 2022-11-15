@@ -1,16 +1,19 @@
 const router = require('express').Router();
 const User = require('../../models/User')
 const Review = require('../../models/Review');
-
 const withAuth = require('../../utils/auth');
 
 // Get all reviews
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
 
   try {
-    const review = await Review.findAll();
+    const reviews = await Review.findAll();
 
-    res.status(200).json(review);
+    res.render('home', {
+      ...reviews
+    });
+
+    res.status(200);
   } catch (err) {
     console.error(err);
     res.status(500);
@@ -18,7 +21,6 @@ router.get('/', async (req, res) => {
 });
 
 // Create a review
-
 router.post('/', withAuth, async (req, res)  => {
 
   try {

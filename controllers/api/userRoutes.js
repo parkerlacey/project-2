@@ -39,7 +39,7 @@ try {
 });
 
 // Log in! --> Check for user in the database
-router.get('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     // Search for user in the database with same email
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -75,7 +75,6 @@ router.get('/login', async (req, res) => {
   }
 });
 
-//!
 //TODO: Log out --> Delete user session
 router.post('/logout', (req, res) => {
 

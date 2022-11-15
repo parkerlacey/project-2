@@ -1,12 +1,10 @@
-//! needs css elements to all be updated in order to target the correct buttons
-
 // Login 
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  //! Collect values from the login form
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  // Collect values from the login form
+  const email = document.getElementById('email-login').value.trim();
+  const password = document.getElementById('password-login').value.trim();
 
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -29,16 +27,16 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  //!get values from the signup form
-  const name = document.querySelector('#name-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  // Get values from the signup form
+  const username = document.getElementById('username-signup').value.trim();
+  const email = document.getElementById('email-signup').value.trim();
+  const password = document.getElementById('password-signup').value.trim();
 
   // If theres a name, email and password value then send values to POST signup route
-  if (name && email && password) {
+  if (username && email && password) {
     const response = await fetch('/api/user/signup', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -51,12 +49,10 @@ const signupFormHandler = async (event) => {
   }
 };
 
-//! pick the correct elements
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
-//! pick the correct elements
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);

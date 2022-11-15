@@ -2,11 +2,9 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
 // Display the welcome page
-router.get('/welcome', async (req, res) => {
+router.get('/welcome', (req, res) => {
   try {
-
     res.render('welcome');
-
   } catch (err){
     console.error(err);
     res.status(500);
@@ -14,21 +12,20 @@ router.get('/welcome', async (req, res) => {
 });
 
 // Display the login page
-router.get('/login', async (req, res) => {
+router.get('/login', (req, res) => {
   try {
     res.render('login');
-    
   }catch (err){
     console.error(err);
     res.status(500);
   }
 });
 
+//! 500 error
 // Display the home page
-router.get('/home', withAuth, async (req, res) => {
+router.get('/home', withAuth, (req, res) => {
   try {
     res.render('home');
-
     res.status(200);
   } catch (err){
     console.error(err);

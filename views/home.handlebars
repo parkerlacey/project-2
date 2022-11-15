@@ -1,83 +1,24 @@
 <!-- Rubberduckie home page -->
 
- <div class="container-fluid py-2">
-        <h2>Archive</h2>
-        <div class="d-flex flex-row flex-nowrap overflow-auto">
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
+
+
+<!--- old -->
+<h2> Recent Quacks </h2>
+
+
+<div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        {{#each reviews as |review|}}
+        <div class="carousel-item">
+            <div class="card">
+                <div class="img-wrapper"><img src="https://picsum.photos/200" class="d-block w-100" alt="..."> </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{review.title}}</h5>
+                    <p class="card-text">{{review.content}}</p>
+                    <a href="#" class="btn btn-dark">View</a>
+                </div>
             </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">
-                <img src="https://placeducky.com/photo/280/277.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Interact</a>
-  </div>
-            </div>
-            <div class="card card-body m-2">Card</div>
-            <div class="card card-body m-2">Card</div>
-            <div class="card card-body m-2">Card</div>
-            <div class="card card-body m-2">Card</div>
         </div>
-    </div>
+        {{/each}}
+
+<script src="./../public/js/homeScript.js"> </script>
