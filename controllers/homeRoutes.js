@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+const Review  = require('../models/Review');
 
 // Display the welcome page
 router.get('/welcome', (req, res) => {
@@ -21,13 +22,19 @@ router.get('/login', (req, res) => {
   }
 });
 
-//! 500 error
+
 // Display the home page
-router.get('/home', withAuth, (req, res) => {
+router.get('/', withAuth, async (req, res) => {
+
   try {
-    res.render('home');
+    const reviews = await Review.findAll();
+
+    res.render('home', {
+      ...reviews
+    });
+
     res.status(200);
-  } catch (err){
+  } catch (err) {
     console.error(err);
     res.status(500);
   }

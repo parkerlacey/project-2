@@ -3,17 +3,13 @@ const User = require('../../models/User')
 const Review = require('../../models/Review');
 const withAuth = require('../../utils/auth');
 
-// Get all reviews
+// Testing - Get all reviews
 router.get('/', withAuth, async (req, res) => {
 
   try {
     const reviews = await Review.findAll();
 
-    res.render('home', {
-      ...reviews
-    });
-
-    res.status(200);
+    res.status(200).json(reviews);
   } catch (err) {
     console.error(err);
     res.status(500);
