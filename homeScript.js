@@ -31,4 +31,15 @@ var multipleCardCarousel = document.querySelector(
     $(multipleCardCarousel).addClass("slide");
   }
 
- 
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '816d4e55c7msh389ac0e5a23c49bp177b17jsnae3edaad5b8e',
+      'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+    }
+  };
+  
+  fetch('https://travel-advisor.p.rapidapi.com/restaurants/list?location_id=293919&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&currency=USD&lunit=km&limit=30&open_now=false&lang=en_US', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
