@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../../models/User')
+const User = require('../../models/User');
 const Review = require('../../models/Review');
 const withAuth = require('../../utils/auth');
 
@@ -36,31 +36,31 @@ router.post('/', withAuth, async (req, res)  => {
 });
 
 // VIEW a specific review based on the review id
-router.get('/:id', async (req, res)=> {
-  try {
-    // Find review by the id
-    const reviewData = await Review.findByPk(req.params.id);
+// router.get('/:id', async (req, res)=> {
+//   try {
+//     // Find review by the id
+//     const reviewData = await Review.findByPk(req.params.id);
 
-    // If there are no reviews from the user
-    if (!reviewData){
-      res.status(404).json({ message: 'There are no reviews with this id!'});
-      return;
-    }
-    // Serialize the data so the template can render it
-    const review = reviewData.get({ plain: true});
+//     // If there are no reviews from the user
+//     if (!reviewData){
+//       res.status(404).json({ message: 'There are no reviews with this id!'});
+//       return;
+//     }
+//     // Serialize the data so the template can render it
+//     const review = reviewData.get({ plain: true});
 
-    // Render the data in the review handlebar
-    res.render('review', {
-      review, 
-      logged_in: true
-    });
+//     // Render the data in the review handlebar
+//     res.render('review', {
+//       review, 
+//       logged_in: true
+//     });
 
-    res.status(200);
-  } catch (err){
-    console.error(err);
-    res.status(500).json(err);
-  }
-});
+//     res.status(200);
+//   } catch (err){
+//     console.error(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // Update a review
 // router.put('/:id', withAuth, async (req, res) => {
