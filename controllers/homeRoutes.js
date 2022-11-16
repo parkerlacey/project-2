@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const fetch = require('node-fetch');
-//const getrestaurant = require('../utils/restaurant');
+const Review  = require('../models/Review');
+const User = require('../models/User');
 
 // Display the welcome page
 router.get('/welcome', (req, res) => {
   try {
     res.render('welcome');
-  } catch (err) {
+  } catch (err){
     console.error(err);
     res.status(500);
   }
@@ -17,43 +17,82 @@ router.get('/welcome', (req, res) => {
 router.get('/login', (req, res) => {
   try {
     res.render('login');
-  } catch (err) {
+  }catch (err){
     console.error(err);
     res.status(500);
   }
 });
 
-//! 500 error
-//? needed to npm install node-fetch and require it
+
 // Display the home page
-router.get('/home', (req, res) => {
-  try {
-    //let response = getrestaurant();
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '816d4e55c7msh389ac0e5a23c49bp177b17jsnae3edaad5b8e',
-        'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
-      },
-    };
+router.get('/', withAuth, async (req, res) => {
 
-    fetch(
-      'https://travel-advisor.p.rapidapi.com/restaurants/list?location_id=293919&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&currency=USD&lunit=km&limit=20&open_now=false&lang=en_US',
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        var listofrestaurants = response.data;
-        return listofrestaurants;
-      })
-      .then((restaurantarray) => {
-        res.render('home', { restaurantarray });
-        res.status(200);
-      });
+  try {
+    const reviewData = await Review.findAll();
+
+    const reviews = reviewData.map((reviews) => reviews.get({ plain: true}));
+
+    res.render('home', {
+      reviews,
+      logged_in: req.session.logged_in
+    });
+
+    res.status(200);
   } catch (err) {
     console.error(err);
     res.status(500);
   }
 });
+
+// Display the write review page
+router.get('/write', (req, res) => {
+  try {
+    res.render('write-review', {
+      logged_in: req.session.logged_in
+    });
+  }catch (err){
+    console.error(err);
+    res.status(500);
+  }
+});
+
+// Display the review page by id of review
+router.get('/review/:id', async (req, res)=> {
+  try {
+    // Find review by the id
+    const reviewData = await Review.findByPk(req.params.id);
+
+    // If there are no reviews to match id
+    if (!reviewData){
+      res.status(404).json({ message: 'There are no reviews with this id!'});
+      return;
+    }
+    // Serialize the data so the template can render it
+    const review = reviewData.get({ plain: true});
+
+    // Render the data in the review handlebar
+    res.render('review', {
+      ...review, 
+      logged_in: true
+    });
+
+    res.status(200);
+  } catch (err){
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
+// Login redirects
+// If the users is already logged in -> redirect to home page
+// If the users is not logged -> display login page
+router.get('/login', (req, res) => {
+  if (req.session.logged_in){
+    res.redirect('/home');
+    return;
+  }
+
+  res.render('login')
+})
 
 module.exports = router;

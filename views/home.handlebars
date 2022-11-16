@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="img-wrapper">
                     <img src="https://picsum.photos/id/23/200" class="d-block w-100" alt="...">
-                    </div>
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{title}}</h5>
                     <p class="card-text">{{content}}</p>
@@ -23,13 +23,13 @@
                 </div>
             </div>
         </div>
-        {{/each}} --}}
+
+        {{/each}} 
         {{#each restaurantarray as |restaurant|}}
         <div>
             {{restaurant.name}}
             {{restaurant.location_string}}
         </div>
-
         {{/each}}
 
-<script src="./../public/js/homeScript.js"> </script>
+        <script src="./../public/js/homeScript.js"> </script>
