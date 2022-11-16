@@ -44,6 +44,16 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// Display the write review page
+router.get('/write', (req, res) => {
+  try {
+    res.render('write-review');
+  }catch (err){
+    console.error(err);
+    res.status(500);
+  }
+});
+
 // Display the review page by id of review
 router.get('/review/:id', async (req, res)=> {
   try {
