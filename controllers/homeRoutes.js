@@ -47,7 +47,9 @@ router.get('/', withAuth, async (req, res) => {
 // Display the write review page
 router.get('/write', (req, res) => {
   try {
-    res.render('write-review');
+    res.render('write-review', {
+      logged_in: req.session.logged_in
+    });
   }catch (err){
     console.error(err);
     res.status(500);
