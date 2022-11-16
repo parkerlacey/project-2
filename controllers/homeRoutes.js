@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const Review  = require('../models/Review');
+const User = require('../models/User');
 
 // Display the welcome page
 router.get('/welcome', (req, res) => {
@@ -40,6 +41,33 @@ router.get('/', withAuth, async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500);
+  }
+});
+
+// Display the review page by id of review
+router.get('/review/:id', async (req, res)=> {
+  try {
+    // Find review by the id
+    const reviewData = await Review.findByPk(req.params.id);
+
+    // If there are no reviews to match id
+    if (!reviewData){
+      res.status(404).json({ message: 'There are no reviews with this id!'});
+      return;
+    }
+    // Serialize the data so the template can render it
+    const review = reviewData.get({ plain: true});
+
+    // Render the data in the review handlebar
+    res.render('review', {
+      ...review, 
+      logged_in: true
+    });
+
+    res.status(200);
+  } catch (err){
+    console.error(err);
+    res.status(500).json(err);
   }
 });
 
