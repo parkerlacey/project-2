@@ -1,4 +1,4 @@
-//Carousel for the whatver Page
+ //Carousel for the whatver Page
 var multipleCardCarousel = document.querySelector(
     "#carouselExampleControls"
   );

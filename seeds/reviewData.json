@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Alright",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut lacus nec neque vestibulum aliquam. In scelerisque libero consequat, convallis lorem at, placerat mi.",
+    "rating": "3" 
+  },
+  {
+    "title": "Amazing!",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut lacus nec neque vestibulum aliquam. In scelerisque libero consequat, convallis lorem at, placerat mi.",
+    "rating": "5" 
+  },
+  {
+    "title": "Terrible",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut lacus nec neque vestibulum aliquam. In scelerisque libero consequat, convallis lorem at, placerat mi.",
+    "rating": "1" 
+  }
+]

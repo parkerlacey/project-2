@@ -1,21 +1,25 @@
 <!-- Rubberduckie home page -->
 
+<h2> Check out your next employer </h2>
+<form>
+    <input class="form-control" type="text" placeholder="Search your city..." aria-label="default input example">
+    <a href="#" id="search-btn" class="view-btn btn btn-dark">Search</a>
+</form>
 
-
-<!--- old -->
 <h2> Recent Quacks </h2>
-
 
 <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
     <div class="carousel-inner">
-        {{!-- {{#each reviews as |review|}}
+        {{#each reviews as |review|}}
         <div class="carousel-item">
             <div class="card">
-                <div class="img-wrapper"><img src="https://picsum.photos/200" class="d-block w-100" alt="..."> </div>
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/id/23/200" class="d-block w-100" alt="...">
+                    </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{review.title}}</h5>
-                    <p class="card-text">{{review.content}}</p>
-                    <a href="#" class="btn btn-dark">View</a>
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{content}}</p>
+                    <a href="/review/{{id}}" class="view-btn btn btn-dark">View</a>
                 </div>
             </div>
         </div>
@@ -27,6 +31,5 @@
         </div>
 
         {{/each}}
-    </div>
-</div>
-<script src="/js/homeScript.js"> </script>
+
+<script src="./../public/js/homeScript.js"> </script>

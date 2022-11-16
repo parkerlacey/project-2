@@ -75,7 +75,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-//TODO: Log out --> Delete user session
+// Log out --> Delete user session
 router.post('/logout', (req, res) => {
 
   // If the user is logged in --> then delete their session/ log them out
