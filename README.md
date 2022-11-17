@@ -36,7 +36,11 @@
 
 ## Demo
 
-![Demo Image](./image/demopic1.png)
+<img src= "https://cdn.discordapp.com/attachments/1037881010320310304/1042646648297365574/image.png"/>
+<img src= "https://cdn.discordapp.com/attachments/1037881010320310304/1042645987828707419/image.png"/>
+<img src= "https://cdn.discordapp.com/attachments/1037881010320310304/1042480824769052723/Screen_Shot_2022-11-16_at_10.48.51_AM.png"/>
+<img src= "https://cdn.discordapp.com/attachments/1037881010320310304/1042646113989169204/image.png"/>
+
 
 
 ---
