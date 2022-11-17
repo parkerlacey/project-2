@@ -63,5 +63,5 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ---
 
-Deployment: http://parkerlacey.github.io/project-2/
+Deployment: https://github.com/parkerlacey/project-2
 Heroku Deployment:  https://intense-plateau-61191.herokuapp.com/
