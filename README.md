@@ -2,16 +2,18 @@
 
 ## Description
  
-Our web site help customer who looking for honest reviews and find right restaurant for customer.
-Customer search a restaurant and find closest restaurant with reviews. Also, customer found honest reviews from actual worker reviews.
+* Ducks is a review site for chefs, line cooks, bakers, stewards and even FOH staff to check in to see what others have said about a restaurant before hitting the apply button.
+
+* The motivation behind Ducks is that more times than not, when you’re interviewing for a position in restaurants they’re only going to showcase the good parts of their operation, leaving people feeling underwhelmed or mislead when they start their new job just to find out that the whole place needs a reset to even be functional.
+
 
 ---
 
 ## User Stories
 
-*  **AS A** restaurant customer 
-**I WANT** webpage accessibility standards and get useful reviews
-**SO THAT** find right restaurant for customers
+*  **AS A** chef/cook
+**I WANT** to be able to see what former employees say about the place I'm applying
+**SO THAT** I can be happy with the place I work
 
 ---
 
@@ -34,7 +36,7 @@ Customer search a restaurant and find closest restaurant with reviews. Also, cus
 
 ## Demo
 
-![Demo Image](./image/demoimage.png)
+![Demo Image](./image/demopic.png)
 
 ---
 
@@ -56,4 +58,4 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 ---
 
-Deployment:
+Deployment: http://parkerlacey.github.io/project-2/
