@@ -1,66 +1,63 @@
-# Ducks
+# Duck!!!!!
 
 ## Description
+ 
+* Ducks is a review site for chefs, line cooks, bakers, stewards and even FOH staff to check in to see what others have said about a restaurant before hitting the apply button.
 
-Looking for a new job in food service? Want to know what the work environment is, how is the pay, do people like working here? Try out Ducks!
-Ducks is a website that allows you to search your area and see 
+* The motivation behind Ducks is that more times than not, when you’re interviewing for a position in restaurants they’re only going to showcase the good parts of their operation, leaving people feeling underwhelmed or mislead when they start their new job just to find out that the whole place needs a reset to even be functional.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
 ---
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+## User Stories
 
-## Badges
+*  **AS A** chef/cook
+**I WANT** to be able to see what former employees say about the place I'm applying
+**SO THAT** I can be happy with the place I work
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+---
 
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
-## Features
+## Acceptance Criteria
 
-If your project has a lot of features, list them here.
+* **GIVEN** a webpage meets accessibility to use
+* **WHEN** User execute Register button
+* **THEN** create ID with Password
+* **WHEN** User execute Log in button
+* **THEN** log in into the webpage
+* **WHEN** User login to webpage
+* **THEN** see all the reviews and create reviews
+* **WHEN** User seaching area
+* **THEN** find restarurant near by
+* **WHEN** User need help to find good restaurant
+* **THEN** webpage find right restaurant for customers
 
-## How to Contribute
+---
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+## Demo
 
-## Tests
+![Demo Image](./image/demopic1.png)
+
+
+---
+
+## License
+
+* Copyright (c) 2022 Dong Lee <dmsloveehd0415@gmail.com>
+
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+---
+
+Deployment: http://parkerlacey.github.io/project-2/
+Heroku Deployment:  https://intense-plateau-61191.herokuapp.com/
