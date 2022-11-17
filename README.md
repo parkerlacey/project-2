@@ -36,7 +36,7 @@
 
 ## Demo
 
-![Demo Image](./image/demopic1.png)
+<img width="1424" alt="demopic1" src="https://user-images.githubusercontent.com/108561728/202348296-7f067462-3842-487a-8c01-dc13c4d7621c.png">
 
 
 ---
